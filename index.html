@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA practice Sheet</title>
+    <style>
+        /* --- Background Image Styles --- */
+        
+        /* Reset default margin/padding and make html/body fill the viewport */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            /* THIS WAS THE PROBLEM: 'overflow: hidden;' clips the hover box.
+               It MUST be changed to 'auto' or 'visible' to allow the box to show.
+            */
+            overflow: auto; 
+            font-family: Arial, sans-serif; /* Added for general text styling */
+        }
+
+        .bg-image {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block; 
+        }
+        .scrollable-tab-bar {
+            position: fixed;
+            bottom: 0;    
+            left: 0;   
+            margin-bottom: 161px;
+            margin-left:170px;
+            width: 50%; 
+            background-color: #f0f0f0;
+            border-top: 0px solid #acacac; 
+            box-sizing: border-box; 
+            overflow-x: auto;  
+            overflow-y: visible; /* CHANGED: This must be 'visible' */
+            white-space: nowrap; 
+        }
+
+        
+        .scrollable-tab-bar a {
+            display:inline-block; 
+            padding: 8px 15px; 
+            text-decoration: none;
+            color: black;
+            font-size: 9px;
+            cursor: pointer;
+        }
+        .scrollable-tab-bar a:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* --- ADDED CSS FOR HOVER BOX --- */
+
+        /* New wrapper to hold the link and its hover box */
+        .tab-item {
+            display: inline-block; /* Makes the items line up horizontally */
+            position: relative; /* Anchors the hover-box */
+        }
+
+        /* The hover box itself */
+        .hover-box {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 100%; /* POSITIONS THE BOX 'UNDER' THE TAB */
+            left: 0;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 10;
+            white-space: normal; /* Allows text inside to wrap */
+            min-width: 200px; /* Give it some width */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Show the hover-box when its parent .tab-item is hovered */
+        .tab-item:hover .hover-box {
+            display: block;
+        }
+
+        /* Styles for the link *inside* the hover box */
+        .hover-box a {
+            display: block; /* Make it block-level */
+            padding: 5px;
+            font-size: 14px; /* Make it readable */
+            color: #0000ee; /* Standard link blue */
+            text-decoration: underline;
+        }
+
+        /* Override default hover for the link *inside* the box */
+        .hover-box a:hover {
+            background-color: #f0f0f0;
+            color: #0000ee;
+        }
+        /* --- END OF ADDED CSS --- */
+
+    </style>
+</head>
+<body>
+
+    
+    <div class="bg-image">
+        
+        <img src="bg.png" alt="Full screen background"  
+            
+    </div>
+<div class="scrollable-tab-bar">
+        
+        <div class="tab-item">
+            <a>EXP1</a>
+            <div class="hover-box">
+                <a href="contents/E1-linked_list_array.c" download>Stack using Linked List - a</a>
+            </div>
+        </div>
+        
+        <div class="tab-item">
+            <a>EXP2</a>
+            <div class="hover-box">
+                <a href="contents/E2-a(stack using array).c" download>stack using array</a>
+                <a href="contents/E2-b(stack using LL).c" download>stack using linkedlist</a>
+            </div>
+        </div>
+
+        <div class="tab-item">
+            <a>EXP3</a>
+            <div class="hover-box">
+                <a href="contents/E3-a(queue using array).c" download>queue using array</a>
+                <a href="contents/E3-b(queue using LL).c" download>queue using LL</a>
+            </div>
+        </div>
+
+        <div class="tab-item">
+            <a>EXP4</a>
+            <div class="hover-box">
+                <a href="contents/E4-a(in-order travsal).c" download>in-order travsal</a>
+                 <a href="contents/E4-b(post-order travsal).c" download>post-order travsal</a>
+                 <a href="contents/E4-b(pre-order travsal).c" download>pre-order travsal</a>
+            </div>
+        </div>
+
+        <div class="tab-item">
+            <a>EXP5</a>
+            <div class="hover-box">
+                <a href="contents/E5-a DFS (recursion).c" download>E5-a DFS (recursion)</a>
+                <a href="contents/E5-b DFS (iterative).c" download>E5-b DFS (iterative)</a>
+            </div>
+        </div>
+
+        <div class="tab-item">
+            <a>EXP6</a>
+            <div class="hover-box">
+                <a href="contents/E6-a BFS (hospital management system).c" download>BFS (hospital management system)</a>
+                <a href="contents/E6-b BFS (bank customer service).c" download>BFS (bank customer service)</a>
+            </div>
+        </div>
+
+        <div class="tab-item">
+            <a>EXP7</a>
+            <div class="hover-box">
+                <a href="contents/E7-a prim's algorthim.c" download>prim's algorthim</a>
+                <a href="contents/E7-b krushal's algorithm.c" download>krushal's algorithm</a>
+            </div>
+        </div>
+
+        <div class="tab-item">
+            <a>EXP8</a>
+            <div class="hover-box">
+                <a href="contents/E8-a dijisktra Smart City – Shortest Path for Ambulance.c" download>dijisktra Smart City – Shortest Path for Ambulance</a>
+                <a href="contents/E8-b flyod washwell Tourist Attractions – All-Pairs Shortest Path.c" download>flyod washwell Tourist Attractions – All-Pairs Shortest Path</a>
+                <a href="contents/E8-c bellman ford Airports – Detect Negative Cycles.c" download>bellman ford Airports – Detect Negative Cycles</a>
+            </div>
+        </div>
+
+        <div class="tab-item">
+            <a>EXP9</a>
+            <div class="hover-box">
+                <a href="contents/E9-a Linear Search (Employee Attendance Check).c" download>Linear Search (Employee Attendance Check)</a>
+                <a href="contents/E9-b Binary Search (Product Availability in E-commerce).c" download>Binary Search (Product Availability in E-commerce)</a>
+            </div>
+        </div>
+
+        <div class="tab-item">
+            <a>EXP10</a>
+            <div class="hover-box">
+                <a href="contents/10a  Bubble Sort (Football Player Scores – Descending Order).c" download>Bubble Sort (Football Player Scores – Descending Order)</a>
+                <a href="contents/10b Selection Sort (Movie Ratings – Descending Order).c" download>Selection Sort (Movie Ratings – Descending Order)</a>
+                <a href="contents/10c Insertion Sort (Flight Departure Times – Ascending Order).c" download>Insertion Sort (Flight Departure Times – Ascending Order)</a>
+                <a href="contents/10d Merge Sort (Patient Priority – Ascending Order).c" download>Merge Sort (Patient Priority – Ascending Order)</a>
+                <a href="contents/10e Quick Sort (Student Scores – Descending Order).c" download>Quick Sort (Student Scores – Descending Order)</a>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
